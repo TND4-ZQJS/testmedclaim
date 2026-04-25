@@ -698,7 +698,7 @@ label:has(.time-input-group)::first-line {
       <option value="RHB Bank">RHB Bank</option>
       <option value="Hong Leong Bank">Hong Leong Bank</option>
       <option value="AmBank">AmBank</option>
-      <option value="UOB Malaysia">UOB Malaysia</option>
+      <option value="UOB Bank">UOB Bank</option>
       <option value="OCBC Bank">OCBC Bank</option>
       <option value="HSBC Bank">HSBC Bank</option>
       <option value="Standard Chartered">Standard Chartered</option>
@@ -753,10 +753,23 @@ label:has(.time-input-group)::first-line {
     
     <div class="row">
     <label style="flex:1">Relationship with Insured Person
-        <input id="ClmMed_Sign_Relationship" class="persist" type="text" placeholder="e.g. 900101-14-1234">
-    </label>
+    <select id="ClmMed_Sign_Relationship" class="persist">
+      <option value="">-- Select Relationship --</option>
+      <option value="Self">Self</option>
+      <option value="Spouse">Spouse</option>
+      <option value="Child">Child</option>
+      <option value="Parent">Parent</option>
+      <option value="Sibling">Sibling</option>
+      <option value="Employee">Employee</option>
+      <option value="Employer">Employer</option>
+      <option value="Legal Guardian">Legal Guardian</option>
+      <option value="Trustee">Trustee</option>
+      <option value="Assignee">Assignee</option>
+      <option value="Other">Other</option>
+    </select>
+  </label>
     <label style="flex:1">Mobile No.
-        <input id="ClmMed_Sign_Relationship_Mobile" class="persist" type="text" placeholder="e.g. 900101-14-1234">
+        <input id="ClmMed_Sign_Relationship_Mobile" class="persist" type="text" placeholder="e.g. 012-23456789">
     </label>
     </div>
 
