@@ -1931,11 +1931,28 @@ if (sig_Simple_Assignee) {
     
     
     // Save & download FillPDF
+    // 1. Save & get bytes
     const pdfBytes = await pdfDoc.save();
+
+    // 2. Extract Policy Number ONLY
+    const policyInput = document.getElementById('ClmMed_Basicinfo_PolicyNo');
+    const policyNum = policyInput ? policyInput.value.trim() : "";
+
+    // 3. Format the filename (PolicyNumber_FormType.pdf)
+    const safePolicy = policyNum.replace(/[^a-z0-9]/gi, '_') || "NEW";
+    const finalFileName = `${safePolicy}_Medical_Accidental_Claim.pdf`;
+
+    // 4. Trigger download
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a"); a.href = url; a.download = "Filled_Medical_Accident_Claim.pdf"; document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(()=> URL.revokeObjectURL(url), 2500);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = finalFileName; 
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    setTimeout(() => URL.revokeObjectURL(url), 2500);
 
   } catch(err){
     alert("PDF generation failed: " + (err.message || err));
