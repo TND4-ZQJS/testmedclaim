@@ -730,26 +730,20 @@ label:has(.time-input-group)::first-line {
     <h2>Signature of Insured Person/Policyowner/Claimant</h2>
     <div class="row">
       <label style="flex:1">Name of Insured Person/Policyowner/Claimant
-        <input id="ClmMed_Sign_PO_Name" class="persist" type="text" placeholder="Enter name">
+        <input id="ClmMed_Sign_PO_Name" class="persist" type="text">
       </label>
     </div>
     <div class="row">
     <label style="flex:1">IC No.
-        <input id="ClmMed_Sign_PO_NIRC" class="persist" type="text" placeholder="e.g. 900101-14-1234">
+        <input id="ClmMed_Sign_PO_NIRC" class="persist" type="text">
     </label>
     </div>
 
-         <div class="row date-group" data-combine="true" data-field="ClmMed_Sign_PO_Date"> 
-  <label class="date-label">Date signed
-    <span class="muted">(DD/MM/YYYY)</span>
-  </label>
-    
-      <div class="date-inputs">
-    <input id="ClmMed_Sign_PO_Day" class="persist date-input" placeholder="DD" type="text" maxlength="2" inputmode="numeric" pattern="\d*">
-    <input id="ClmMed_Sign_PO_Month" class="persist date-input" placeholder="MM" type="text" maxlength="2" inputmode="numeric" pattern="\d*">
-    <input id="ClmMed_Sign_PO_Year" class="persist date-input" placeholder="YYYY" type="text" maxlength="4" inputmode="numeric" pattern="\d*">
-  </div>
-</div>
+    <div class="row">
+    <label style="flex:1">Mobile No.
+        <input id="ClmMed_Sign_Relationship_Mobile" class="persist" type="text">
+    </label>
+    </div>
     
     <div class="row">
     <label style="flex:1">Relationship with Insured Person
@@ -768,10 +762,19 @@ label:has(.time-input-group)::first-line {
       <option value="Other">Other</option>
     </select>
   </label>
-    <label style="flex:1">Mobile No.
-        <input id="ClmMed_Sign_Relationship_Mobile" class="persist" type="text" placeholder="e.g. 012-23456789">
-    </label>
     </div>
+
+    <div class="row date-group" data-combine="true" data-field="ClmMed_Sign_PO_Date"> 
+  <label class="date-label">Date signed
+    <span class="muted">(DD/MM/YYYY)</span>
+  </label>
+    
+      <div class="date-inputs">
+    <input id="ClmMed_Sign_PO_Day" class="persist date-input" placeholder="DD" type="text" maxlength="2" inputmode="numeric" pattern="\d*">
+    <input id="ClmMed_Sign_PO_Month" class="persist date-input" placeholder="MM" type="text" maxlength="2" inputmode="numeric" pattern="\d*">
+    <input id="ClmMed_Sign_PO_Year" class="persist date-input" placeholder="YYYY" type="text" maxlength="4" inputmode="numeric" pattern="\d*">
+  </div>
+</div>
 
         <div class="sig-preview" id="preview_simple_owner" onclick="openSig('simple_owner')">
       <span>Tap to Sign (Policyowner / Assignee)</span>
